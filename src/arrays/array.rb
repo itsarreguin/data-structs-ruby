@@ -2,6 +2,7 @@ module ArrayModule
     class Array
         def initialize(capacity, fill_value="None")
             @elements = []
+
             for arr in 0...capacity do
                 @elements.push(fill_value)
             end
@@ -38,11 +39,19 @@ module ArrayModule
         end
 
         def add(new_item)
-            return @elements.append(new_item)
+            if @elements != []
+                return @elements.append(new_item)
+            end
         end
 
         def delt
-            return @elements.pop()
+            while @elements
+                return "Delete #{@elements.pop()} correctly"
+            end
+        end
+
+        def get_item(index)
+            return @elements[index]
         end
 
         def order

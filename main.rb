@@ -1,5 +1,5 @@
 require_relative "src/arrays/array"
 
-menu = ArrayModule::Array.new(0)
+menu = ArrayModule::Array.new(5)
 
-puts menu.len()
+puts menu.add("Append")
