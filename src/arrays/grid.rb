@@ -2,10 +2,12 @@ require_relative "./array"
 
 module GridModule
     class Grid < ArrayModule::Array
+        attr_accessor :rows, :columns, :data
+
         def def initialize(rows, columns, default_value="None")
           @data = Array(rows)
 
-          for row in 0...rows do
+          for row in rows.length do
               @data[row] = Array(columns, default_value)
           end
         end
@@ -22,6 +24,10 @@ module GridModule
             if @data
                 return "Index #{index}: #{@data[index]} item"
             end
+        end
+
+        def str
+            # Fill comment
         end
     end
 end

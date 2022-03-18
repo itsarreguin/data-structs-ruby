@@ -1,6 +1,8 @@
 module ArrayModule
     class Array
-        def initialize(capacity, fill_value="None")
+        attr_accessor :capacity, :elements
+        
+        def initialize(capacity, fill_value=nil)
             @elements = []
 
             for arr in 0...capacity do
@@ -12,16 +14,16 @@ module ArrayModule
             return @elements
         end
 
-        def str
-            return @elements.to_s
-        end
-
         def len
             if @elements != []
                 return "Array length: #{@elements.length}"
             else
                 puts "Array empty"
             end
+        end
+
+        def str
+            return @elements.to_s if @elements != []
         end
 
         def ins(index, new_item)
@@ -39,9 +41,7 @@ module ArrayModule
         end
 
         def add(new_item)
-            if @elements != []
-                return @elements.append(new_item)
-            end
+            return "Insert #{new_item} item in #{@elements.append(new_item)}"
         end
 
         def delt
@@ -51,11 +51,11 @@ module ArrayModule
         end
 
         def get_item(index)
-            return @elements[index]
+            return "Index #{index} is: #{@elements[index]} element"
         end
 
-        def order
-            return @elements.sort { |a,z| a <=> z }
+        def ord
+            return @elements.sort
         end
 
         def rev
