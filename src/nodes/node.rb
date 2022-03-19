@@ -1,7 +1,9 @@
 module NodeModule
     class Node
-        def initialize(data, after="None")
-            @data = data
+        attr_accessor :value, :next, :after
+
+        def initialize(value, after=nil)
+            @value = value
             @next = after
         end
     end
